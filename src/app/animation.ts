@@ -1,69 +1,54 @@
 import {
   animate,
+  keyframes,
   state,
   style,
   transition,
   trigger,
 } from '@angular/animations';
 
-export const highlightedStateTrigger = [
-  trigger('highlightState', [
-    state(
-      'default',
+export const highlightedStateTrigger = trigger('highlightedState', [
+  state(
+    'default',
+    style({
+      border: '2px solid #B2B6FF',
+    })
+  ),
+  state(
+    'highlighted',
+    style({
+      border: '4px solid #B2B6FF',
+      filter: 'brightness(92%)',
+    })
+  ),
+  transition('default => highlighted', [
+    animate(
+      '200ms ease-out',
       style({
-        border: '2px solid #B2B6FF',
-        transform: 'scale(1)', // Estado inicial com tamanho normal
-        filter: 'brightness(100%)', // Sem alteração de brilho
+        transform: 'scale(1.02)',
       })
     ),
-    state(
-      'highlighted',
-      style({
-        border: '4px solid #B2B6FF',
-        filter: 'brightness(92%)', // Um brilho levemente reduzido
-        transform: 'scale(1.05)', // Aumenta o tamanho do elemento
-      })
-    ),
-    transition('default => highlighted', [
-      animate(
-        '300ms cubic-bezier(0.25, 0.8, 0.25, 1)', // Usando cubic-bezier para suavizar a transição
-        style({
-          transform: 'scale(1.1)', // Expande um pouco mais quando destacado
-        })
-      ),
-      animate('200ms ease-out'), // Suaviza a finalização da animação
-    ]),
-    transition('highlighted => default', [
-      animate(
-        '200ms ease-out',
-        style({
-          transform: 'scale(1)', // Retorna ao tamanho original suavemente
-        })
-      ),
-    ]),
+    animate(200),
   ]),
-];
+]);
 
 export const shownStateTrigger = trigger('shownState', [
   transition(':enter', [
     style({
       opacity: 0,
-      transform: 'translateY(20px)', // Desloca o elemento para baixo no início
     }),
     animate(
-      '400ms cubic-bezier(0.25, 0.8, 0.25, 1)', // Usando cubic-bezier para suavizar o movimento
+      300,
       style({
         opacity: 1,
-        transform: 'translateY(0)', // Volta para a posição original
       })
     ),
   ]),
   transition(':leave', [
     animate(
-      '300ms ease-in',
+      300,
       style({
         opacity: 0,
-        transform: 'translateY(20px)', // Desloca o elemento para baixo ao sair
       })
     ),
   ]),
@@ -72,16 +57,34 @@ export const shownStateTrigger = trigger('shownState', [
 export const checkButtonTrigger = trigger('checkButton', [
   transition('* => checked', [
     animate(
-      '400ms ease-in-out',
+      '400ms ease-in',
       style({
-        transform: 'scale(1.2)', // Aumenta o tamanho do botão ao ser clicado
-        backgroundColor: '#4CAF50', // Mudança de cor para verde
+        transform: 'scale(0.4)',
       })
     ),
+  ]),
+]);
+export const filterTrigger = trigger('filterAnimation', [
+  transition(':enter', [
+    style({
+      opacity: 0,
+      width: 0,
+    }),
     animate(
-      '100ms ease-out',
+      '2000ms ease-out',
+      keyframes([
+        style({ offset: 0, opacity: 0, width: 0 }),
+        style({ offset: 0.8, opacity: 0.5, width: '*' }),
+        style({ offset: 1, opacity: 1, width: '*' }),
+      ])
+    ),
+  ]),
+  transition(':leave', [
+    animate(
+      '400ms cubic-bezier(.13, .9, .8, .1)',
       style({
-        transform: 'scale(1)', // Retorna ao tamanho normal após a pulsação
+        opacity: 0,
+        width: 0,
       })
     ),
   ]),
