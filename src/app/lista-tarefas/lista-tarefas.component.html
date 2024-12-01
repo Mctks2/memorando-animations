@@ -3,6 +3,8 @@
     <button (click)="mostrarOuEsconderFormulario()">Criar nova tarefa</button>
   </div>
   <form
+    @shownState
+    [@formButton]="formulario.valid ? 'valid' : 'invalid'"
     class="formulario ff-prompt"
     [formGroup]="formulario"
     *ngIf="formAberto"
@@ -45,6 +47,7 @@
     </app-mensagem>
     <div class="botoes-form">
       <button
+        id="botao-salvar"
         (click)="salvarTarefa()"
         class="botao-form"
         [ngClass]="habilitarBotao()"
@@ -74,7 +77,7 @@
       placeholder="Buscar tarefa"
       [(ngModel)]="campoBusca"
       (keyup)="filtrarTarefasPorDescricao(campoBusca)"
-      />
+    />
   </div>
   <div *ngIf="tarefasFiltradas.length > 0; else semTarefas">
     <div
@@ -126,5 +129,5 @@
   </div>
 </section>
 <ng-template #semTarefas>
-  <p class="ng-template ff-prompt">Olá! Ainda não há tarefas por aqui! :)</p>
+  <p @flyInOut class="ng-template ff-prompt">Olá! Ainda não há tarefas por aqui!</p>
 </ng-template>

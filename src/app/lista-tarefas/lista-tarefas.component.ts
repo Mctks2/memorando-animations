@@ -7,6 +7,8 @@ import { Tarefa } from '../interface/tarefa';
 import {
   checkButtonTrigger,
   filterTrigger,
+  flyInOutTrigger,
+  formButtonTrigger,
   highlightedStateTrigger,
   shownStateTrigger,
 } from '../animation';
@@ -20,11 +22,13 @@ import {
     shownStateTrigger,
     checkButtonTrigger,
     filterTrigger,
+    formButtonTrigger,
+    flyInOutTrigger
   ],
 })
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];
-  formAberto: boolean = false;
+  formAberto: boolean = true;
   categoria: string = '';
   validado: boolean = false;
   indexTarefa: number = -1;
@@ -36,8 +40,8 @@ export class ListaTarefasComponent implements OnInit {
     id: [0],
     descricao: ['', Validators.required],
     statusFinalizado: [false, Validators.required],
-    categoria: ['', Validators.required],
-    prioridade: ['', Validators.required],
+    categoria: ['Casa', Validators.required],
+    prioridade: ['Alta', Validators.required],
   });
 
   constructor(
@@ -57,9 +61,10 @@ export class ListaTarefasComponent implements OnInit {
   filtrarTarefasPorDescricao(descricao: string) {
     this.campoBusca = descricao.trim().toLowerCase();
     if (descricao) {
-      this.tarefasFiltradas = this.listaTarefas.filter(tarefa =>
-        tarefa.descricao.toLowerCase().includes(this.campoBusca));
-    } else { 
+      this.tarefasFiltradas = this.listaTarefas.filter((tarefa) =>
+        tarefa.descricao.toLowerCase().includes(this.campoBusca)
+      );
+    } else {
       this.tarefasFiltradas = this.listaTarefas;
     }
   }
