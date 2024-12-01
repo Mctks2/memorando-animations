@@ -169,9 +169,7 @@ export const flyInOutTrigger = trigger('flyInOut', [
   ]),
   transition(':leave', [
     group([
-      animate(
-        '0.3s ease',
-        style({
+      animate('0.3s ease', style({
           transform: 'translateX(100%)',
           width: '*',
         })
@@ -185,3 +183,22 @@ export const flyInOutTrigger = trigger('flyInOut', [
     ]),
   ]),
 ]);
+
+
+export const shakeTrigger = trigger('shakeAnimation', [
+  transition('* => *', [ // any state to any state
+    query('input.ng-invalid:focus, select.ng-invalid:focus', [
+      animate('0.5s', keyframes([
+        style({ border: '2px solid red'}),
+        style({ transform: 'translateX(0)'}),
+        style({ transform: 'translateX(-10px)'}),
+        style({ transform: 'translateX(10px)'}),
+        style({ transform: 'translateX(-10px)'}),
+        style({ transform: 'translateX(10px)'}),
+        style({ transform: 'translateX(-10px)'}),
+        style({ transform: 'translateX(10px)'}),
+        style({ transform: 'translateX(0)'}),
+      ]))
+    ], { optional: true }) // se não houver elemento relacionados a esta transição, ele ignora
+  ])
+])
