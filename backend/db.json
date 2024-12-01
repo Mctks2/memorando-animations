@@ -18,20 +18,20 @@
       "id": 4,
       "descricao": "Preencher formulário de inscrição",
       "categoria": "Estudos",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "prioridade": "Normal"
     },
     {
       "id": 5,
       "descricao": "Trocar lâmpada",
       "categoria": "Casa",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "prioridade": "Alta"
     },
     {
       "id": 6,
       "descricao": "Ler",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "categoria": "Estudos",
       "prioridade": "Alta"
     }
