@@ -25,14 +25,7 @@
       "id": 5,
       "descricao": "Trocar lâmpada",
       "categoria": "Casa",
-      "statusFinalizado": true,
-      "prioridade": "Alta"
-    },
-    {
-      "id": 6,
-      "descricao": "Ler",
-      "statusFinalizado": true,
-      "categoria": "Estudos",
+      "statusFinalizado": false,
       "prioridade": "Alta"
     }
   ]
