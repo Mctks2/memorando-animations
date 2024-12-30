@@ -1,27 +1,87 @@
-# 2806Memorando
+# 📝 Memorando
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+**Memorando** é um gerenciador de tarefas simples e funcional, desenvolvido em **Angular**. O projeto permite criar, organizar e gerenciar tarefas com diferentes níveis de prioridade e categorias. Com uma interface intuitiva, o usuário pode adicionar, editar, excluir, marcar como concluída ou pesquisar tarefas rapidamente.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Funcionalidades
 
-## Code scaffolding
+- **Criar Tarefas**:
+  - Clique no botão **"Criar Tarefa"** para abrir uma interface de criação.
+  - Insira:
+    - Nome da Tarefa.
+    - Prioridade: **Baixa**, **Normal**, ou **Alta**.
+    - Categoria: **Casa**, **Trabalho**, ou **Estudo**.
+  - Ao clicar em **Salvar**, a tarefa será adicionada à lista de tarefas.
+  - Caso clique em **Cancelar**, a interface de criação será fechada.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Editar Tarefas**:
+  - Clique no ícone de **Nota + Lápis** para editar uma tarefa existente.
 
-## Build
+- **Excluir Tarefas**:
+  - Clique no ícone de **Lixeira** para remover uma tarefa.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Concluir Tarefas**:
+  - Clique no **checklist redondo** para marcar uma tarefa como concluída.
 
-## Running unit tests
+- **Pesquisar Tarefas**:
+  - Utilize o campo **"Busque por uma tarefa"** para filtrar e localizar tarefas específicas.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## 🛠️ Tecnologias Utilizadas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Angular** - Framework para o desenvolvimento front-end.
+- **TypeScript** - Linguagem para escalabilidade e tipagem.
+- **HTML** - Estruturação das páginas.
+- **CSS** - Estilização da interface.
+- **JSON Server** - Simulação de API para armazenamento de dados.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 📂 Como Rodar o Projeto
+
+### Configuração do Front-End:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/memorando.git
+   ```
+2. Acesse o diretório do projeto:
+
+```bash
+cd memorando
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+4. Execute o projeto:
+
+```bash
+ng serve
+```
+### Configuração do Back-End:
+
+1. Navegue até a pasta backend:
+
+```bash
+cd backend
+```
+
+2. Inicie o servidor JSON:
+
+```bash
+npm start
+```
+
+## 🚧 Layout
+
+<a href="https://www.figma.com/community/file/1418674155756158149" target="__blank">
+<img src="https://user-images.githubusercontent.com/71772559/178192253-4fe4757c-de57-4878-a38c-a483c25670b1.png" />
+</a>
+
+## 🎬 Imagens / Vídeos
+
+![memorando-animations](https://github.com/user-attachments/assets/8e738023-c90e-4865-baf4-c8d4b152a195)
+
