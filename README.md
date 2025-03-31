@@ -41,9 +41,11 @@
 ### Configuração do Front-End:
 
 1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/memorando.git
-   ```
+   
+```bash
+git clone https://github.com/seu-usuario/memorando.git
+```
+
 2. Acesse o diretório do projeto:
 
 ```bash
